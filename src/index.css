@@ -2,3 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  max-width: 375px;
+}
+
+.button-blue {
+  box-shadow: inset 0px -8px 0px #118c87;
+}
+
+.button-gold {
+  box-shadow: inset 0px -8px 0px #cc8b13;
+}
+
+
+
+
+
+.button-quit {
+  box-shadow: inset 0px -4px 0px #6b8997;
+}
+
+
+.modal {
+ 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 180px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.504); /* Black w/ opacity */
+}
+
+.input-box {
+  box-shadow: 0px 8px 0px #10212a;
+  width: 96px;
+  height: 96px;
+  background-color: #1F3641;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box img {
+  width: 40px;
+}
