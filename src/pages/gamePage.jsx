@@ -1,7 +1,7 @@
 import iconX from ".././assets/icon-x.svg";
 import iconO from ".././assets/icon-o.svg";
 import restartIcon from ".././assets/icon-restart.svg";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Fragment, useEffect, useState } from "react";
 import WinLossPopup from "../components/winLoss";
 import { isTerminal } from "../utils/functions";
@@ -131,13 +131,13 @@ const GamePage = () => {
     }
   };
 
-  const isEmpty = (board) => {
-    return board.every((cell) => !cell);
-  };
+  // const isEmpty = (board) => {
+  //   return board.every((cell) => !cell);
+  // };
 
-  const isFull = (board) => {
-    return board.every((cell) => cell);
-  };
+  // const isFull = (board) => {
+  //   return board.every((cell) => cell);
+  // };
 
   const getBestMove = (newBoard, depth, isMax, callback = () => {}) => {
     if (depth === 0) setNodes({});
@@ -255,13 +255,13 @@ const GamePage = () => {
           onClickRestartGame={restartGameHandler}
         />
       )}
-      <div className="w-screen h-screen bg-[#1A2A33] flex flex-col items-center pt-6">
-        <div className="flex justify-between w-full  px-[23px]  max-w-[375px]">
-          <div className="flex mb-[32px]">
+      <div className="w-screen h-screen md:h-auto  bg-[#1A2A33] flex flex-col items-center py-6 md:py-6 md:justify-center">
+        <div className="flex justify-between w-full  px-[23px]  max-w-[375px] md:max-w-[500px]">
+          <div className="flex mb-[32px] md:mb-[20px]">
             <img className="w-[32px] mr-[7px]" src={iconX} />
             <img className="w-[32px]" src={iconO} />
           </div>
-          <div className="w-[96px] h-[40px] bg-[#1F3641] rounded-[5px] text-[#A8BFC9] text-[14px] font-bold flex items-center justify-evenly mr-[30px]">
+          <div className="w-[96px] md:w-[140px] h-[40px] bg-[#1F3641] rounded-[5px] text-[#A8BFC9] text-[14px] font-bold flex items-center justify-evenly mr-[30px] md:gap-[13px] md:justify-center">
             <img className="w-[16px]" src={turn === human ? iconX : iconO} />
             TURN
           </div>
@@ -272,7 +272,7 @@ const GamePage = () => {
             <img src={restartIcon} alt="" />
           </button>
         </div>
-        <div className="flex flex-wrap justify-center max-w-[375px]">
+        <div className="flex flex-wrap justify-center max-w-[375px] md:max-w-[500px]">
           {board.map((val, i) => {
             return (
               <InputBox
@@ -292,12 +292,12 @@ const GamePage = () => {
                 ? { backgroundColor: "#31C3BD" }
                 : { backgroundColor: "#F2B137" }
             }
-            className="w-[96px] h-[64px]  rounded-[10px] m-[10px] text-[14px] text-[#1A2A33] font-medium flex flex-col justify-center items-center"
+            className="w-[96px] md:w-[140px] h-[64px]  rounded-[10px] m-[10px] text-[14px] text-[#1A2A33] font-medium flex flex-col justify-center items-center"
           >
             <p>{playerSymbol} (YOU)</p>
             <p className="font-bold text-[20px]">{scores.x}</p>
           </div>
-          <div className="w-[96px] h-[64px] bg-[#A8BFC9] rounded-[10px] m-[10px] text-[14px] text-[#1A2A33] font-medium flex flex-col justify-center items-center">
+          <div className="w-[96px] md:w-[140px] h-[64px] bg-[#A8BFC9] rounded-[10px] m-[10px] text-[14px] text-[#1A2A33] font-medium flex flex-col justify-center items-center">
             <p>TIES</p>
             <p className="font-bold text-[20px]">{scores.draw}</p>
           </div>
@@ -307,7 +307,7 @@ const GamePage = () => {
                 ? { backgroundColor: "#31C3BD" }
                 : { backgroundColor: "#F2B137" }
             }
-            className="w-[96px] h-[64px] rounded-[10px] m-[10px] text-[14px] text-[#1A2A33] font-medium flex flex-col justify-center items-center"
+            className="w-[96px] md:w-[140px] h-[64px] rounded-[10px] m-[10px] text-[14px] text-[#1A2A33] font-medium flex flex-col justify-center items-center"
           >
             <p>{playerSymbol === human ? cpu : human} (CPU)</p>
             <p className="font-bold text-[20px]">{scores.o}</p>

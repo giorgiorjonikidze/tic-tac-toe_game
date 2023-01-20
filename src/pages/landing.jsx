@@ -22,23 +22,29 @@ const Landing = () => {
   const cpuOpponentHandler = () => {
     dispatch(gameSliceActions.setOpponentCpu());
     navigate("/game");
-    localStorage.setItem("player", JSON.stringify({ player: player,opponent: "cpu" }));
+    localStorage.setItem(
+      "player",
+      JSON.stringify({ player: player, opponent: "cpu" })
+    );
   };
   const humanOpponentHandler = () => {
     dispatch(gameSliceActions.setOpponentHuman());
     navigate("/game");
-    localStorage.setItem("player", JSON.stringify({ player: player,opponent: "human" }));
+    localStorage.setItem(
+      "player",
+      JSON.stringify({ player: player, opponent: "human" })
+    );
   };
 
   return (
-    <div className="w-screen h-screen bg-[#1A2A33] flex flex-col items-center pt-6">
+    <div className="w-screen h-screen bg-[#1A2A33] flex flex-col items-center pt-6 md:justify-center md:pt-0">
       <div className="flex mb-[32px]">
         <img className="w-[32px] mr-[7px]" src={iconX} />
         <img className="w-[32px]" src={iconO} />
       </div>
-      <div className="w-[327px] h-[205px] bg-[#1F3641] rounded-[15px] flex flex-col justify-center items-center">
+      <div className="w-[327px] h-[205px] bg-[#1F3641] rounded-[15px] flex flex-col justify-center items-center md:w-[460px]">
         <p className="text-[#A8BFC9] font-bold">PICK PLAYER 1’S MARK</p>
-        <div className="w-[279px] h-[75px] bg-[#1A2A33] rounded-[10px] mt-[24px] mb-[17px] flex items-center justify-evenly">
+        <div className="w-[279px] h-[75px] bg-[#1A2A33] rounded-[10px] mt-[24px] mb-[17px] flex items-center justify-evenly md:w-[412px]">
           <button
             onClick={chooseX}
             style={
@@ -46,7 +52,7 @@ const Landing = () => {
                 ? { backgroundColor: "#A8BFC9" }
                 : { backgroundColor: "#1A2A33" }
             }
-            className="w-[131px] h-[54px]  rounded-[10px]  flex items-center justify-center"
+            className="w-[131px] h-[54px]  rounded-[10px]  flex items-center justify-center md:w-[198px]"
           >
             <img
               className="w-[32px]"
@@ -60,7 +66,7 @@ const Landing = () => {
                 ? { backgroundColor: "#A8BFC9" }
                 : { backgroundColor: "#1A2A33" }
             }
-            className="w-[131px] h-[54px] bg-[#A8BFC9] rounded-[10px]  flex items-center justify-center"
+            className="w-[131px] h-[54px] bg-[#A8BFC9] rounded-[10px]  md:w-[198px]  flex items-center justify-center"
           >
             <img
               className="w-[32px]"
@@ -74,13 +80,13 @@ const Landing = () => {
       </div>
       <button
         onClick={cpuOpponentHandler}
-        className="button-gold bg-[#F2B137] w-[327px] h-[56px] rounded-[15px] font-bold text-[#1A2A33] mt-[32px] mb-[16px] hover:bg-[#FFC860]"
+        className="button-gold bg-[#F2B137] w-[327px] h-[56px] rounded-[15px] font-bold text-[#1A2A33] mt-[32px] mb-[16px] hover:bg-[#FFC860] md:w-[460px]" 
       >
         NEW GAME (VS CPU)
       </button>
       <button
         onClick={humanOpponentHandler}
-        className="button-blue bg-[#31C3BD] w-[327px] h-[56px] rounded-[15px] font-bold text-[#1A2A33] hover:bg-[#65E9E4]"
+        className="button-blue bg-[#31C3BD] w-[327px] h-[56px] rounded-[15px] font-bold text-[#1A2A33] hover:bg-[#65E9E4] md:w-[460px]"
       >
         NEW GAME (VS PLAYER)
       </button>
