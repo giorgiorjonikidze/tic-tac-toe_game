@@ -19,14 +19,14 @@ body {
 }
 
 .modal {
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 180px; /* Location of the box */
+  position: fixed; 
+  z-index: 1;
+  padding-top: 180px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.504); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.504); 
 }
 
 .input-box {
@@ -41,9 +41,6 @@ body {
   align-items: center;
 }
 
-/* .input-box img {
-  width: 40px;
-} */
 
 @media only screen and (min-width: 760px) {
   .input-box {

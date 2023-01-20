@@ -255,7 +255,7 @@ const GamePage = () => {
           onClickRestartGame={restartGameHandler}
         />
       )}
-      <div className="w-screen h-screen md:h-auto  bg-[#1A2A33] flex flex-col items-center py-6 md:py-6 md:justify-center">
+      <div className="w-screen h-screen md:h-auto xl:h-screen  bg-[#1A2A33] flex flex-col items-center py-6 md:py-6 md:justify-center">
         <div className="flex justify-between w-full  px-[23px]  max-w-[375px] md:max-w-[500px]">
           <div className="flex mb-[32px] md:mb-[20px]">
             <img className="w-[32px] mr-[7px]" src={iconX} />
